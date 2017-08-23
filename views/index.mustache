@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Pop Vinyl's</title>
+</head>
+
+<body>
+    <h1>Pop Vinyl Collection</h1>
+    <h3>Insert a new Pop Vinyl to the Collection</h3>
+    <form action="/" method="post">
+        <label for="">Character Name:</label><input type="text" name="character.name" placeholder="Pop Character">
+        <label for="">Year released</label><input type="number" min="0" max="2017" name="character.description.releaseYear"
+            placeholder="2017">
+        <label for="">Size</label><input type="text" name="character.description.size" placeholder="'normal' or 'large''">
+        <label for="">Sub Collection</label><input type="text" name="character.subCollection" placeholder="Freddy Funko">
+        <label for="">Pop Collection</label><select name="popCollection">
+            <option value="">Select</option>
+            <option value="Heros">Heros</option>
+            <option value="Marvel">Marvel</option>
+            <option value="Disney">Disney</option>
+            <option value="Star Wars">Star Wars</option>
+            <option value="Harry Potter">Harry Potter</option>
+            <option value="WWE">WWE</option>
+            <option value="Television">Television</option>
+            <option value="Movies">Movies</option>
+            <option value="Animation">Animation</option>
+            <option value="Game of Thrones">Game of Thrones</option>
+            <option value="Games">Games</option>
+            <option value="Rocks">Rocks</option>
+            <option value="Muppets">Muppets</option>
+            <option value="Sesame Street">Sesame Street</option>
+            <option value="Pets">Pets</option>
+            <option value="Ad Icons">Ad Icons</option>
+            <option value="Sports">Sports</option>
+            <option value="Sports">Sports</option>
+            <option value="Rides">Rides</option>
+            <option value="Books">Books</option>
+            <option value="Stan Lee">Stan Lee</option>
+            <option value="My Little Pony">My Little Pony</option>
+            <option value="Holiday">Holiday</option>
+            <option value="Freddy Funko">Freddy Funko</option>
+            <option value="Pop Asia">Pop Asia</option>
+        </select>
+        <label for="">Collection Number</label><input type="number" name="collectionNumber" min="1" placeholder="1">
+        <button>Sumbit</button>
+    </form>
+
+</body>
+
+</html>

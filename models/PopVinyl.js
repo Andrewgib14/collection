@@ -3,10 +3,12 @@ const Schema = mongoose.Schema;
 
 const PopVinylSchema = new Schema
     ({
-        charater:
+        character:
         {
-            type: String,
-            require: true,
+            name: {
+                type: String,
+                require: true
+            },
             description:
             {
                 releaseYear:
@@ -20,11 +22,10 @@ const PopVinylSchema = new Schema
                     type: String,
                     enum: ["normal", "large"]
                 },
-                colorScheme: String,
                 subCollection: String
             }
         },
-        collection:
+        popCollection:
         {
             type: String,
             require: true,
