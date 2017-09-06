@@ -9,7 +9,7 @@ indexRoutes.post("/", function (req, res) {
     PopVinylFigure
         .save()
         .then(function (savedPop) {
-            res.render("index", savedPop);
+            res.redirect("/");
         })
         .catch(function (err) {
             res.status(500).send(err);
@@ -29,20 +29,20 @@ indexRoutes.get("/", function (req, res) {
             res.status(500).send(err);
         })
 })
-indexRoutes.get("/:id", function (req, res) {
+indexRoutes.get("/pop/:id", function (req, res) {
     PopVinyl.findById(req.params.id)
         .then(function (foundPop) {
             if (!foundPop) {
-                res.send({ msg: "No Pops found." })
+                return res.send({ msg: "No Pops found." })
             }
-            res.render("index", foundPop)
+            res.render("singlePop", { foundPop: foundPop })
         })
         .catch(function (err) {
             res.status(500).send(err);
         })
 })
 
-indexRoutes.put("/:id", function (req, res) {
+indexRoutes.post("/pop/:id", function (req, res) {
     PopVinyl.findByIdAndUpdate(req.params.id, req.body)
         .then(function (updatedPop) {
             if (!updatedPop) {
@@ -55,7 +55,7 @@ indexRoutes.put("/:id", function (req, res) {
         })
 })
 
-indexRoutes.delete("/:id", function (req, res) {
+indexRoutes.get("/:id", function (req, res) {
     PopVinyl.findByIdAndRemove(req.params.id)
         .then(function (message) {
             res.send(message)
