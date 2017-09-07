@@ -46,19 +46,19 @@ indexRoutes.post("/pop/:id", function (req, res) {
     PopVinyl.findByIdAndUpdate(req.params.id, req.body)
         .then(function (updatedPop) {
             if (!updatedPop) {
-                res.send({ msg: "Could not update Pop." })
+                return res.send({ msg: "Could not update Pop." })
             }
-            res.render("index", updatedPop)
+            return res.redirect(`/pop/${req.params.id}`)
         })
         .catch(function (err) {
             res.status(500).send(err);
         })
 })
 
-indexRoutes.get("/:id", function (req, res) {
+indexRoutes.get("/delete/:id", function (req, res) {
     PopVinyl.findByIdAndRemove(req.params.id)
         .then(function (message) {
-            res.send(message)
+            res.redirect("/");
         })
         .catch(function (err) {
             res.status(500).send(err);

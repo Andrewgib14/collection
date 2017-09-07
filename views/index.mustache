@@ -17,7 +17,7 @@
         <label for="">Year released</label><input type="number" min="0" max="2017" name="character.description.releaseYear"
             placeholder="2017">
         <label for="">Size</label><input type="text" name="character.description.size" placeholder="'normal' or 'large''">
-        <label for="">Sub Collection</label><input type="text" name="character.subCollection" placeholder="Freddy Funko">
+        <label for="">Sub Collection</label><input type="text" name="character.description.subCollection" placeholder="Freddy Funko">
         <label for="">Pop Collection</label><select name="popCollection">
             <option value="">Select</option>
             <option value="Heros">Heros</option>
@@ -54,8 +54,8 @@
         <a href="/pop/{{_id}}">Character Name: {{character.name}}</a>
         <p>Release Year: {{character.description.releaseYear}}</p>
         <p>Size: {{character.description.size}}</p>
-        <p>Sub Collection: {{character.subCollection}}</p>
-        <p>Pop Collection: {{popColletion}}</p>
+        <p>Sub Collection: {{character.description.subCollection}}</p>
+        <p>Pop Collection: {{popCollection}}</p>
         <p>Collection Number: {{collectionNumber}}</p>
     </div>
     {{/popVinyls}}
